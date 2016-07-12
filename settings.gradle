@@ -1,0 +1,4 @@
+include 'email-server'
+include 'email-client'
+
+rootProject.name = 'email-server-stub'
