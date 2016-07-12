@@ -18,3 +18,12 @@ This listens to port 25000.
 
 A simple web application which can be used to send emails and retrieve emails from the stub server.
 This can be started via the command `./gradlew bootRun`.
+
+## Run as a full service (requires Docker)
+
+From the root of the project execute:
+```
+./gradlew clean build shadowJar
+
+docker-compose up
+```

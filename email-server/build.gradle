@@ -33,7 +33,7 @@ dependencies {
 mainClassName = 'com.mxk.stub.email.server.EmailServerApplication'
 
 shadowJar {
-    baseName = 'email-server-server'
+    baseName = 'email-server'
     classifier = null
     version = null
 }

@@ -1,0 +1,9 @@
+email-server:
+  build: email-server/.
+  ports:
+    - "25000:25000"
+
+email-client:
+  build: email-client/.
+  ports:
+    - "8080:8080"

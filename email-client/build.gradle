@@ -16,8 +16,8 @@ repositories {
 }
 
 jar {
-    baseName = 'email-server-client'
-    version = '0.1.0'
+    baseName = 'email-client'
+    version = null
 }
 
 dependencies {
