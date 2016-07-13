@@ -23,6 +23,7 @@ jar {
 dependencies {
     compile("org.springframework.boot:spring-boot-devtools")
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile("org.springframework.boot:spring-boot-starter-data-mongodb")
 
     compile 'com.fasterxml.jackson.core:jackson-databind:2.6.5'
     compile 'org.slf4j:slf4j-api:1.7.18'

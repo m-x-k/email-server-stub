@@ -1,20 +1,24 @@
 package com.mxk.stub.email.client.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "email")
 public class Email {
 
-    private String header;
-    private String body;
+    @Id
+    private String id;
+    private String content;
 
-    public Email(String header, String body) {
-        this.header = header;
-        this.body = body;
+    public Email(String content) {
+        this.content = content;
     }
 
-    public String getHeader() {
-        return header;
+    public String getId() {
+        return id;
     }
 
-    public String getBody() {
-        return body;
+    public String getContent() {
+        return content;
     }
 }

@@ -1,5 +1,9 @@
 package com.mxk.stub.email.server.factory;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.MongoClient;
 import org.subethamail.smtp.*;
 
 import java.io.BufferedReader;
@@ -8,6 +12,14 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class EmailMessageHandlerFactory implements MessageHandlerFactory {
+
+    private DBCollection emailCollection;
+
+    public EmailMessageHandlerFactory(MongoClient mongo) {
+        super();
+        DB db = mongo.getDB("emails");
+        emailCollection = db.getCollection("email");
+    }
 
     public MessageHandler create(MessageContext ctx) {
         return new Handler(ctx);
@@ -29,10 +41,14 @@ public class EmailMessageHandlerFactory implements MessageHandlerFactory {
         }
 
         public void data(InputStream data) throws IOException {
+            String emailContent = this.convertStreamToString(data);
+
             System.out.println("MAIL DATA");
             System.out.println("= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =");
-            System.out.println(this.convertStreamToString(data));
+            System.out.println(emailContent);
             System.out.println("= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =");
+
+            insertEmailIntoDB(emailContent);
         }
 
         public void done() {
@@ -54,5 +70,11 @@ public class EmailMessageHandlerFactory implements MessageHandlerFactory {
             return sb.toString();
         }
 
+    }
+
+    private void insertEmailIntoDB(String emailContent) {
+        BasicDBObject document = new BasicDBObject();
+        document.put("content", emailContent);
+        emailCollection.insert(document);
     }
 }

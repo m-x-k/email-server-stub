@@ -1,2 +1,9 @@
 server:
     port: 8080
+
+spring:
+    data:
+      mongodb:
+          host: emailserverstub_email-db_1
+          port: 27017
+          database: emails

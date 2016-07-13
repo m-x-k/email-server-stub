@@ -1,0 +1,10 @@
+helo myserver.domain.com
+mail from: test@example.com
+rcpt to: test@example.com
+data
+subject: Test
+to: test@example.com
+Testing
+.
+quit
+
