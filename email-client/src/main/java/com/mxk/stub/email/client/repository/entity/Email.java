@@ -1,4 +1,4 @@
-package com.mxk.stub.email.client.model;
+package com.mxk.stub.email.client.repository.entity;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

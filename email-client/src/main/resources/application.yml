@@ -7,3 +7,8 @@ spring:
           host: emailserverstub_email-db_1
           port: 27017
           database: emails
+
+    mail:
+      host: emailserverstub_email-server_1
+      port: 25000
+      send.from: sendfrom@example.com

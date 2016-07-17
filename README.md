@@ -1,6 +1,6 @@
 # email-server-stub
 
-This project is still a work in progress!
+A simple java email server intended for automated testing.
 
 ## Objectives
 
@@ -27,3 +27,8 @@ From the root of the project execute:
 
 docker-compose up
 ```
+
+## Client API information
+
+http://localhost:8080/swagger-ui.html
+
