@@ -27,3 +27,5 @@ From the root of the project execute:
 
 docker-compose up
 ```
+
+
