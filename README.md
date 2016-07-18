@@ -28,7 +28,28 @@ From the root of the project execute:
 docker-compose up
 ```
 
+### To rebuild containers from scratch
+
+```
+./rebuild-docker.sh
+```
+
 ## Client API information
 
 http://localhost:8080/swagger-ui.html
 
+## Testing
+
+### Send example email
+```
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{
+  "sendTo": "test@example.com",
+  "subject": "test",
+  "text": "my text"
+}' 'http://localhost:8080/email'
+```
+
+### List emails
+```
+http://localhost:8080/emails
+```

@@ -6,6 +6,9 @@ public class EmailNotification {
     private String subject;
     private String text;
 
+    protected EmailNotification() {
+    }
+
     public EmailNotification(String sendTo, String subject, String text) {
         this.sendTo = sendTo;
         this.subject = subject;
